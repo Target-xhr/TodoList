@@ -1,14 +1,13 @@
 <template>
-  <div class="avatar" :class="{ avatar__selected: selected }">
+  <div class="avatar" :class="{ avatar__selected: !!selected }">
     <div class="avatar_face">
-      <img src="../assets/logo.png" />
+      <img src="../assets/公子头像.png" />
     </div>
-    <h2 class="avatar_name">Hello, Jane.</h2>
+    <h2 class="avatar_name">早上好, 徐浩榕</h2>
     <p class="avatar_tips">
-      Looks like feed good.<br />You have {{ todayTasks.length }} tasks to do
-      today.
+      充分利用好自己的时间吧.<br />你有 {{ todayTasks.length }} 项未完成 的任务
     </p>
-    <p class="avatar_date">TODAY : {{ today | dateString }}</p>
+    <p class="avatar_date">今日 : {{ today | dateString }}</p>
   </div>
 </template>
 
@@ -38,8 +37,8 @@ export default {
 <style lang="less">
 .avatar {
   display: flex;
-  padding: 0 40px;
-  height: 300px;
+  padding: 0 5vw;
+  height: 35vh;
   justify-content: flex-end;
   flex-direction: column;
   transition: all 0.5s ease;
@@ -49,11 +48,11 @@ export default {
   opacity: 0;
 }
 .avatar_face {
-  width: 44px;
-  height: 44px;
+  width: 80px;
+  height: auto;
   border-radius: 100%;
   overflow: hidden;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 1vw 1vh 1vw rgba(0, 0, 0, 0.4);
 
   img {
     display: block;
@@ -62,24 +61,22 @@ export default {
   }
 }
 .avatar_name {
-  margin-top: 32px;
-  padding: 0 6px;
-  font-size: 32px;
-  letter-spacing: 1px;
+  margin-top: 1vh;
+  padding: 0 2vw;
+  font-size: 7vw;
+  letter-spacing: 0.5vw;
   font-weight: 300;
+  color: white;
 }
 .avatar_tips {
-  margin-top: 16px;
-  padding: 0 6px;
-  font-size: 13px;
-  font-weight: 100;
+  padding: 0 2vw;
+  font-size: 5vw;
+  font-weight: 300;
   opacity: 0.8;
-  line-height: 1.6em;
 }
 .avatar_date {
-  margin-top: 44px;
-  margin-bottom: 16px;
-  padding: 0 6px;
-  font-size: 14px;
+  margin-bottom: 2vh;
+  padding: 0 2vw;
+  font-size: 5vw;
 }
 </style>

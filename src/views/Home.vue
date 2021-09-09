@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <app-bar title="TODO" left="bars" right="search" />
+    <app-bar title="TODO" left="bars" right="search"/>
     <avatar />
     <gradient />
     <todo-list />
