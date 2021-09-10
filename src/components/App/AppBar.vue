@@ -1,10 +1,10 @@
 <template>
-  <div class="app-bar">
+  <div class="app-bar" @click="$emit('left')">
     <span class="app-bar_l">
       <i :class="['fa', `fa-${left}`]"></i>
     </span>
     <h1>{{ title }}</h1>
-    <span class="app-bar_r">
+    <span class="app-bar_r" @click="$emit('right')">
       <!-- 拼接fa fa-search, 注意用的是反单引号 -->
       <i :class="['fa', `fa-${right}`]"></i>
     </span>

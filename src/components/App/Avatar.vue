@@ -1,7 +1,7 @@
 <template>
   <div class="avatar" :class="{ avatar__selected: !!selected }">
     <div class="avatar_face">
-      <img src="../assets/公子头像.png" />
+      <img src="@/assets/公子头像.png" />
     </div>
     <h2 class="avatar_name">早上好, 徐浩榕</h2>
     <p class="avatar_tips">

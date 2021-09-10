@@ -1,11 +1,12 @@
 <template>
-  <div class="todo-list" :class="{ 'todo-list_selected': selected }">
+  <div class="todo-list">
     <ul :style="{ width: `${todos.length * 100}%` }">
       <li
         v-for="todo in todos"
         :key="todo.name"
         :style="{ transform: `translate3d(-${currentIndex * 100}%, 0, 0)` }"
       >
+        <!-- todo来自li的单个tudo -->
         <todo
           :todo="todo"
           :selected="selected && selected.todo === todo"

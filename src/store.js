@@ -18,7 +18,15 @@ export default new Vuex.Store({
             date: new Date(),
             done: false,
             deleted: false
-          }
+          },
+          {
+            id: 2,
+            title: '锻炼',
+            date: new Date(),
+            done: false,
+            deleted: false
+          },
+
         ],
         colors: ['#ff6262', '#ffa947']
       },
@@ -82,10 +90,17 @@ export default new Vuex.Store({
         name: 'Home',
         tasks: [
           {
-            id: 2,
+            id: 1,
             title: 'House Keeping',
             date: new Date(),
             done: true,
+            deleted: false
+          },
+          {
+            id: 2,
+            title: '买酱油',
+            date: new Date(),
+            done: false,
             deleted: false
           }
         ],
@@ -113,6 +128,9 @@ export default new Vuex.Store({
       return tasks
     }
   },
+  // 更改 Vuex 的 store 中的状态的唯一方法是提交 mutation。Vuex 中的 mutation 非常类似于事件：
+  // 每个 mutation 都有一个字符串的 事件类型 (type) 和 一个 回调函数 (handler)。
+  // 这个回调函数就是我们实际进行状态更改的地方，并且它会接受 state 作为第一个参数：
   mutations: {
     selectTodo(state, selected) {
       state.unselect = null

@@ -1,20 +1,28 @@
 <template>
   <div class="todo" :class="{ todo_selected: selected }">
     <div class="todo_head" @click="handleClick">
+      <!-- 看来color是个函数，必须用{}引用 -->
       <div class="todo_icon" :style="{ color }">
+        <!-- 注意反单引号 -->
         <i :class="['fa', `fa-${todo.icon}`]"></i>
       </div>
       <div class="todo_menu"><i class="fa fa-ellipsis-v"></i></div>
     </div>
+
+    
     <div class="todo_body">
       <p class="todo_tips">{{ todo.tasks.length }} Tasks</p>
       <h3 class="todo_title">{{ todo.name }}</h3>
       <div class="todo_progress">
         <span class="todo_progress_line">
+          <!-- 函数必须用{}调用 width是有颜色部分的长度-->
           <i :style="{ width: progress, backgroundImage: progressColor }"></i>
         </span>
         <span class="todo_progress_num"> {{ progress }}</span>
       </div>
+
+
+      
       <div class="todo_tasks">
         <h4 class="todo_subtitle" v-if="todayTasks.length">Today</h4>
         <ul>
@@ -40,7 +48,7 @@
 </template>
 
 <script>
-import { today, tomorrow } from "../shared";
+import { today, tomorrow } from "../../shared";
 import task from "./Task.vue";
 export default {
   name: "",

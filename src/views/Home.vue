@@ -11,11 +11,11 @@
 </template>
 
 <script>
-import AppBar from '../components/AppBar.vue'
-import Avatar from '../components/Avatar.vue'
-import Gradient from '../components/Gradient.vue'
-import TodoList from '../components/TodoList.vue'
-import TodoDetail from '../components/TodoDetail.vue'
+import AppBar from '../components/App/AppBar.vue'
+import Avatar from '../components/App/Avatar.vue'
+import Gradient from '../components/Color/Gradient.vue'
+import TodoList from '../components/TodoList/TodoList.vue'
+import TodoDetail from '../components/TodoList/TodoDetail.vue'
 import TodoEditing from '../components/TodoEditing.vue'
 import FloatingButton from '../components/FloatingButton.vue'
 export default {
