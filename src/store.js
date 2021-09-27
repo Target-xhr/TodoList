@@ -9,14 +9,15 @@ export default new Vuex.Store({
     currentIndex: 1,
     todos: [
       {
+        index: 1,
         icon: 'user',
         name: 'Personal',
         tasks: [
           {
             id: 1,
-            title: 'Dating',
+            title: '原神-大号每日体力',
             date: new Date(),
-            done: false,
+            done: true,
             deleted: false
           },
           {
@@ -26,11 +27,20 @@ export default new Vuex.Store({
             done: false,
             deleted: false
           },
+          {
+            id:3,
+            title: '聚餐唱K',
+            date: new Date(),
+            done: false,
+            deleted: false
+
+          }
 
         ],
         colors: ['#ff6262', '#ffa947']
       },
       {
+        index:2,
         icon: 'suitcase',
         name: 'Work',
         tasks: [
@@ -86,6 +96,7 @@ export default new Vuex.Store({
         colors: ['#5b9df9', '#47bfff']
       },
       {
+        index:3,
         icon: 'home',
         name: 'Home',
         tasks: [
@@ -144,10 +155,16 @@ export default new Vuex.Store({
       if (state.currentIndex < state.todos.length - 1) {
         state.currentIndex++
       }
+      else{
+        state.currentIndex = 0
+      }
     },
     prevTodo(state) {
       if (state.currentIndex > 0) {
         state.currentIndex--
+      }
+      else{
+        state.currentIndex = 2
       }
     },
     deleteTask(_, { task }) {

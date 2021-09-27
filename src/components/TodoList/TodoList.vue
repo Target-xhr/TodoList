@@ -3,6 +3,7 @@
     <ul :style="{ width: `${todos.length * 100}%` }">
       <li
         v-for="todo in todos"
+        :class="choose"
         :key="todo.name"
         :style="{ transform: `translate3d(-${currentIndex * 100}%, 0, 0)` }"
       >
@@ -22,7 +23,15 @@ import { mapState, mapMutations } from "vuex";
 import Todo from "./Todo.vue";
 export default {
   name: "",
+
+  data() {
+    return {
+      lis: null,
+    };
+  },
+
   mounted() {
+    
     let touch = {};
     this.$el.addEventListener("touchstart", (evt) => {
       touch.startX = evt.touches[0].clientX;
@@ -37,8 +46,14 @@ export default {
       }
       if (touch.endX < touch.startX) {
         this.nextTodo();
+        let last_class = this.classes.pop()
+        this.classes.unshift(last_class)
+        console.log(this.classes)
       } else {
         this.prevTodo();
+        let first_class = this.classes.shift()
+        this.classes.push(first_class)
+        console.log(this.classes)
       }
     });
   },
@@ -49,11 +64,17 @@ export default {
     ...mapState(["todos", "currentIndex", "selected"]),
   },
   data() {
-    return {};
+    return {
+      classes:['Personal', 'Work', 'Home']
+    };
   },
   methods: {
     ...mapMutations(["selectTodo", "nextTodo", "prevTodo"]),
+    choose(){
+      return this.classes
+    },
   },
+ 
 };
 </script>
 
