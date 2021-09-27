@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'http://news.4399.com/gonglue/seer/tujian/948256.htm',//设置你调用的接口域名和端口号 别忘了加http
+        target: '',//设置你调用的接口域名和端口号 别忘了加http
         changeOrigin: true,//允许跨域
         pathRewrite: {
           '^/api': '' //这个是定义要访问的路径，名字随便写 
